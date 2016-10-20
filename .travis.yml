@@ -1,4 +1,5 @@
 language: ruby
+
 rvm:
   - 2.0.0
 
@@ -7,26 +8,16 @@ branches:
     - master
     - live
 
-# before_install:
-#   - npm install -g gulp
-#   - npm install -g bower
-
 install:
   - bundle install
-#  - npm install
-#  - bower install
 
-cache: 
- bundler: true
- directories:
-#  - bower_components
-#  - node_modules
+cache:
+  bundler: true
 
-before_script:
-#  - echo -e "Host 104.130.157.215\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-
-script:
-#  - bash build.sh
-
-after_success:
-#  - bash deploy.sh
+deploy:
+  provider: s3
+  access_key_id:
+    secure: tT/RhJo5awxJyU95lg5UMezcCG7GYYlZg5HV5Hwa7CsWpIBRtag56d5PYKuLK0JISZMuO5uSmDLMExjezwSBPrFBxMsk1KZjNIhH6HHzfSb5d+1p4CUPd8bZ6rR6YWklhz9oR4M7XXINDR2Mf2lQylb2u3/FyiCXibwoh3cgMOkJD4YjjyNkcBujBef7dT9KfIQzumKTy9bfNOVVws+TtQlSfFujySTmctQqg+Kfw3I2cIkVxQBeMRI03Kb1AzDspRM1OycKDTxryq1fzTWkWyRQ1e5bqsYZutKsUK0d4ZjTrFUfX4NWmtHi+GN043deaB/+dcPxDsR/PJvPARQmBXSCVUUAtiOpIrVtGREEZfiXhXRwhuE/0nzyNdm9nMkHTSnHf7q+z0gSC0mUUYo9av0RqSJ9ASSUxx/n1QAszKauxcW+DHXp9+ET1edCQMYGp2EbuSDTcIVvnimkj9LIdmueDrhhKuv4kQwMdtA5iy0ede5LIcxHxga06A9PTjM7WB3rNpkrFBsu9EZRwW3YL6OyBmCpUm4bkE9rYtieJqNuTJ1cX1klbrQWolrrE+KBSpA5G4/3/Pr9A5FN6BNXxvuAet3FJSQFqzyomanqYEP57J3qT/Qgn1BycX0qm+qWZUe5w9nClUA7qXVSPYqWi9yx12fpMjyU2xlMbeL2TU4=
+  secret_access_key:
+    secure: P65Ef7+KaWPlF870v27AKYXORNf3C8Dq0ki+LxR4gh37NsBINGuYXuvU1KKleIELe1ac5weU4BWMzgwzW9DvlHqbwMApS7hcpc6nB6qx5SrNVgNSnIfgwSjkW/nKPKT5CoSYSVWps6HW6LRPvE11vw8Tp+VI7sC1gcAoqf7RS8H3df+Bb+tBZkvCzELshdLFPwfM/QU6QFsQcmoKePEnt/ws1Vs3UPayhzpQ8/r0JnprI+YGxPd1DyEY51SVENdVk6CNcXu+Wo1QNEpYLaLYnrnFZq0ddkerJWCLJPUqwtXwIRb1nIDsJvhybT6R5DnscJ+TF12j7Z2uRkIkJ5N34e3rrQDQY+DVzCKJU7CHqPZLSCovDhf+fwiu8s6gm5Tk1bxcUVVJYJEfpSbKbWsmD0QoMi0C3Oc6i9mNgcHHaeHcyn3Ebt3VqEKUJRrS5iO4Bt0zTw2dJTF1RhxWmgGnS2rSXGlD2AaU20j4xJ1bLaHZ7HneFeEQ8UIqynqActtpBAxfPDhuxMK9lxpWSgj18Rt5OwFTjnoUfx+a+UhdHGjA/YOp6mBn/xkEQDRAPkT+yzMAUWzulUfq33AD86Nky0caMjOsQM1M/NzaRMLXsSwYGREL9sq6jxYr4WapntL1nI6cSuRh4icb9hVSqmzK8t0GArr43ZQHlp38abIt7Ec=
+  bucket: revealthis.life
